@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Listing;
+use Termwind\Components\Li;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,24 +15,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// All Listing
 Route::get('/', function () {
     return view('listings', [
         'heading' => 'Latest listing',
-        'listings' => [
-            // [
-            //     'id' => 1,
-            //     'title' => 'listing one',
-            //     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, aliquid?',
-            // ],
-            // [
-            //     'id' => 2,
-            //     'title' => 'listing two',
-            //     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, aliquid?',
-            // ]
-        ]
+        'listings' => Listing::all(),
     ]);
 });
+
+// Single Listing
+Route::get('/listings/{id}', function ($id) {
+    return view('listing', [
+        'listing' => Listing::find($id)
+    ]);
+});
+
+
 
 // Route::get('/hello', function () {
 //     return 'Hello World';

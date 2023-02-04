@@ -49,6 +49,9 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 // Show Register User
 Route::get('/register', [UserController::class, 'create']);
 
+// store registerd user
+Route::post('/users', [UserController::class, 'store']);
+
 
 
 // Route::get('/listings/{id}', function ($id) {

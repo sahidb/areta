@@ -7,7 +7,7 @@
             <p class="mb-4">Log into your account</p>
         </header>
 
-        <form action="/users/login" method="POST">
+        <form action="/users/authenticate" method="POST">
             @csrf
             <div class="mb-6">
                 <label for="email" class="inline-block text-lg mb-2">Email</label>

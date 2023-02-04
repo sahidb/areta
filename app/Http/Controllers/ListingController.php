@@ -14,7 +14,10 @@ class ListingController extends Controller
     {
         return view('listings.index', [
             'heading' => 'Latest listing',
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get(),
+            // 'listings' => Listing::latest()->filter(request(['tag', 'search']))->get(),
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6),
+            // 'listings' => Listing::latest()->filter(request(['tag', 'search']))->simplePaginate(6),
+
         ]);
     }
     // melihat salah satu listing

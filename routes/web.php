@@ -52,6 +52,12 @@ Route::get('/register', [UserController::class, 'create']);
 // store registerd user
 Route::post('/users', [UserController::class, 'store']);
 
+// logout
+Route::post('/logout', [UserController::class, 'logout']);
+
+// login
+Route::get('/login', [UserController::class, 'login']);
+
 
 
 // Route::get('/listings/{id}', function ($id) {

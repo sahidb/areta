@@ -1,18 +1,17 @@
-@extends('layouts.main')
-@section('content')
-@include('partials._hero')
-@include('partials._search')
+<x-layout>
+    @include('partials._hero')
+    @include('partials._search')
 
-<!-- @if (count($listings) == 0)
+    <!-- @if (count($listings) == 0)
     <h2>No Listings found</h2>
     @endif -->
-<div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
-    @unless (count($listings) == 0)
-    @foreach ($listings as $listing)
-    <x-listing-card :listing="$listing"></x-listing-card>
-    @endforeach
-    @else
-    <h2>No Listings found</h2>
-    @endunless
-    @endsection
-</div>
+    <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
+        @unless (count($listings) == 0)
+        @foreach ($listings as $listing)
+        <x-listing-card :listing="$listing"></x-listing-card>
+        @endforeach
+        @else
+        <h2>No Listings found</h2>
+        @endunless
+    </div>
+</x-layout>

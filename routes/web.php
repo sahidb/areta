@@ -18,9 +18,11 @@ use Termwind\Components\Li;
 */
 // All Listing
 Route::get('/', [ListingController::class, 'index']);
-
+// show create form
+Route::get('/listings/create', [ListingController::class, 'create']);
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
 
 // Common Resource Routes:
 // index - show all listings

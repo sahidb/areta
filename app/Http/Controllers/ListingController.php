@@ -85,4 +85,11 @@ class ListingController extends Controller
         // Session::flash('message', 'Listing Created');
         return back()->with('message', 'Listing Edited successfully');
     }
+
+    // delete data
+    public function destroy(Listing $listing)
+    {
+        $listing->delete();
+        return redirect('/')->with('message', 'Listing deleted successfully');
+    }
 }

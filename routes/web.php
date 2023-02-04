@@ -16,14 +16,6 @@ use Termwind\Components\Li;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// All Listing
-Route::get('/', [ListingController::class, 'index']);
-// show create form
-Route::get('/listings/create', [ListingController::class, 'create']);
-// Single Listing
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
-
-
 // Common Resource Routes:
 // index - show all listings
 // show - show single listing
@@ -32,6 +24,17 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 // edit - show edit form to edit listing
 // update - update data to database
 // destroy - delete listing
+
+// All Listing
+Route::get('/', [ListingController::class, 'index']);
+// show create form
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+// storing listing data
+Route::post('/listings', [ListingController::class, 'store']);
+
+// Single Listing
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 // Route::get('/listings/{id}', function ($id) {
 //     $listing = Listing::find($id);
